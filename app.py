@@ -20,6 +20,7 @@ import time
 import copy
 from concurrent.futures import ThreadPoolExecutor
 from app import create_app
+import os
 
 # Configure logging
 logging.basicConfig(
@@ -813,11 +814,12 @@ def handle_exception(e):
     }), 500
 
 if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 10000))
     try:
-        logger.info(f"Starting server on {Config.HOST}:{Config.PORT}")
+        logger.info(f"Starting server on 0.0.0.0:{port}")
         app.run(
-            host=Config.HOST,
-            port=Config.PORT,
+            host='0.0.0.0',
+            port=port,
             debug=Config.DEBUG,
             threaded=True
         )
