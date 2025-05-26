@@ -4,9 +4,9 @@ services:
     env: python
     region: oregon
     plan: free
-    branch: main
+    branch: master
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app  # ← CHỈ nếu app.py có dòng `app = Flask(__name__)`
+    startCommand: gunicorn backend_app:app  # ← CHỈ nếu app.py có dòng `app = Flask(__name__)`
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
