@@ -20,8 +20,9 @@ import time
 import copy
 from concurrent.futures import ThreadPoolExecutor
 import os
+from app import create_app
 
-app = Flask(__name__)
+app = create_app()
 
 @app.route("/", methods=["GET"])
 def index():
