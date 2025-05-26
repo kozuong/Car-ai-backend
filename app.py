@@ -19,7 +19,6 @@ import requests
 import time
 import copy
 from concurrent.futures import ThreadPoolExecutor
-from app import create_app
 import os
 
 # Configure logging
@@ -34,7 +33,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Initialize Flask app
-app = create_app()
+app = Flask(__name__)
 
 # Initialize rate limiter
 limiter = Limiter(
@@ -293,6 +292,10 @@ def build_result(fields, lang, price=None, number_produced=None, rarity=None, en
     except Exception as e:
         logger.error(f"Error in build_result: {str(e)}", exc_info=True)
         raise
+
+@app.route('/')
+def index():
+    return jsonify({"status": "running", "message": "Car AI Backend API"})
 
 @app.route('/health', methods=['GET'])
 def health_check():
@@ -818,7 +821,7 @@ def handle_exception(e):
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 10000))
     try:
-        logger.info(f"Starting server on 0.0.0.0:{port}")
+        logger.info(f"Khởi động server tại 0.0.0.0:{port}")
         app.run(
             host='0.0.0.0',
             port=port,
@@ -826,5 +829,5 @@ if __name__ == '__main__':
             threaded=True
         )
     except Exception as e:
-        logger.error(f"Failed to start server: {str(e)}")
+        logger.error(f"Lỗi khởi động server: {str(e)}")
         raise
