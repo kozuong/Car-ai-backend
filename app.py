@@ -19,6 +19,7 @@ import requests
 import time
 import copy
 from concurrent.futures import ThreadPoolExecutor
+from app import create_app
 
 # Configure logging
 logging.basicConfig(
@@ -32,7 +33,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Initialize Flask app
-app = Flask(__name__)
+app = create_app()
 
 # Initialize rate limiter
 limiter = Limiter(

@@ -19,6 +19,5 @@ EXPOSE 8080
 # Set environment variables
 ENV PORT=8080
 
-CMD ["python", "app.py"]
 # Run the application
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app 
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 "app:create_app()" 
