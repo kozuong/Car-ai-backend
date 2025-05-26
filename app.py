@@ -42,7 +42,6 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Initialize Flask app
-app = Flask(__name__)
 
 # Initialize rate limiter
 limiter = Limiter(
