@@ -1,5 +1,9 @@
-from flask import Flask
 app = Flask(__name__)
+
+@app.route("/", methods=["GET"])
+def index():
+    return jsonify({"message": "Hello from Car AI Backend"})
+
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -24,12 +28,6 @@ import copy
 from concurrent.futures import ThreadPoolExecutor
 import os
 
-@app.route("/", methods=["GET"])
-def index():
-    return jsonify({
-        "message": "Car AI Backend API",
-        "status": "running"
-    })
 # Configure logging
 logging.basicConfig(
     level=getattr(logging, Config.LOG_LEVEL),
