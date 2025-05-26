@@ -5,12 +5,12 @@ services:
     region: oregon
     plan: free
     branch: main
-    workingDir: car-ai-backend
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: gunicorn backend_app:app
+    workingDir: car-ai-backend
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11
+        value: 3.11.0
       - key: FLASK_ENV
         value: production
       - key: GEMINI_API_KEY
