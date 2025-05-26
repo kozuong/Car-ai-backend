@@ -301,10 +301,6 @@ def build_result(fields, lang, price=None, number_produced=None, rarity=None, en
         logger.error(f"Error in build_result: {str(e)}", exc_info=True)
         raise
 
-@app.route('/')
-def index():
-    return jsonify({"status": "running", "message": "Car AI Backend API"})
-
 @app.route('/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
