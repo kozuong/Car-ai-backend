@@ -1,0 +1,5 @@
+names:
+  0: car_logo
+path: C:\Flutter_app\car-ai-backend\training_data
+train: images/train
+val: images/val

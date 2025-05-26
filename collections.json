@@ -1,0 +1,49 @@
+{
+  "Favorites": [
+    {
+      "car_name": "Unknown Car",
+      "brand": "Unknown",
+      "year": "N/A",
+      "price": "N/A",
+      "power": "N/A",
+      "acceleration": "N/A",
+      "top_speed": "N/A",
+      "description": "Unable to extract detailed information from the image.",
+      "engineDetail": "- No engine details available.\n",
+      "interior": "No interior details available.",
+      "features": [],
+      "processing_time": 2.93985,
+      "timestamp": "2025-05-16T13:53:30.976777"
+    },
+    {
+      "car_name": "Lamborghini Veneno Roadster",
+      "brand": "Lamborghini",
+      "year": "2013",
+      "price": "$4.5 million - $5 million USD",
+      "power": "750 hp",
+      "acceleration": "2.8 seconds",
+      "top_speed": "355 km/h",
+      "description": "The Lamborghini Veneno Roadster is an ultra-limited-production, open-top supercar known for its aggressive aerodynamic design and exceptional performance.  It's a showcase of Lamborghini's engineering prowess and a symbol of exclusivity.  Only nine were ever produced.",
+      "engineDetail": "• Configuration: Naturally Aspirated V12\n• Displacement: 6.5 liters\n• Turbo/Supercharging: None\n• Transmission: 7-speed Independent Shifting Rod (ISR)",
+      "interior": "• Seating: Leather and Alcantara, 2 seats\n• Dashboard: Carbon fiber, digital instrument cluster, minimalist design\n• Technology:  Advanced electronics, navigation system\n• Key Features:  All-wheel drive,  aggressive aerodynamics,  limited production run, naturally aspirated V12 engine.",
+      "features": [],
+      "processing_time": 2.204742,
+      "timestamp": "2025-05-16T13:25:25.193220"
+    },
+    {
+      "car_name": "Lamborghini Veneno",
+      "brand": "Lamborghini",
+      "year": "2013",
+      "price": "$4,500,000 - $5,000,000 USD",
+      "power": "750 hp",
+      "acceleration": "2.8 seconds",
+      "top_speed": "355 km/h",
+      "description": "The Lamborghini Veneno is an ultra-limited-production, high-performance sports car, built to celebrate Lamborghini's 50th anniversary.  It's known for its aggressive aerodynamic design and exceptional speed and handling.  Only three road-going versions were produced.",
+      "engineDetail": "• Configuration: 6.5L V12 naturally aspirated\n• Displacement: 6.5 liters\n• Turbo/Supercharging: None\n• Transmission: 7-speed Independent Shifting Rod (ISR)",
+      "interior": "• Seating: Leather, two seats\n• Dashboard:  Digital instrument cluster, minimal controls.\n• Technology:  Advanced carbon fiber construction, sophisticated electronics.\n• Key Features:  Extreme aerodynamics, all-wheel drive,  limited production exclusivity, carbon fiber monocoque chassis.",
+      "features": [],
+      "processing_time": 2.914081,
+      "timestamp": "2025-05-13T06:54:35.632009"
+    }
+  ]
+}

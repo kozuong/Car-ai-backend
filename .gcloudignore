@@ -1,0 +1,161 @@
+# This file specifies files that are *not* uploaded to Google Cloud
+# using gcloud. It follows the same syntax as .gitignore, with the addition of
+# "#!include" directives (which insert the entries of the given .gitignore-style
+# file at that point).
+#
+# For more information, run:
+#   $ gcloud topic gcloudignore
+#
+.gcloudignore
+# If you would like to upload your .git directory, .gitignore file or files
+# from your .gitignore file, remove the corresponding line
+# below:
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Local development
+.env
+.env.local
+.env.*.local
+
+# Test files
+tests/
+test/
+pytest.ini
+.coverage
+htmlcov/
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Large media files
+*.mp4
+*.mov
+*.avi
+*.wmv
+*.flv
+*.mkv
+
+# Dataset files
+*.csv
+*.json
+*.xml
+*.xlsx
+*.xls
+
+# Model files
+*.h5
+*.pkl
+*.model
+*.weights
+*.pt
+*.pth
+
+# Cache
+.cache/
+.pytest_cache/
+.mypy_cache/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+*.g.dart
+*.freezed.dart
+
+# Android
+**/android/**/gradle-wrapper.jar
+**/android/.gradle
+**/android/captures/
+**/android/gradlew
+**/android/gradlew.bat
+**/android/local.properties
+**/android/**/GeneratedPluginRegistrant.java
+
+# iOS
+**/ios/**/*.mode1v3
+**/ios/**/*.mode2v3
+**/ios/**/*.moved-aside
+**/ios/**/*.pbxuser
+**/ios/**/*.perspectivev3
+**/ios/**/*sync/
+**/ios/**/.sconsign.dblite
+**/ios/**/.tags*
+**/ios/**/.vagrant/
+**/ios/**/DerivedData/
+**/ios/**/Icon?
+**/ios/**/Pods/
+**/ios/**/.symlinks/
+**/ios/**/profile
+**/ios/**/xcuserdata
+**/ios/.generated/
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# Coverage
+coverage/
+*.lcov
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store

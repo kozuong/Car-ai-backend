@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: car-ai-backend
+    env: python
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: FLASK_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        value: # <-- thêm đúng API Key ở Render dashboard, không ghi vào file này nếu công khai
