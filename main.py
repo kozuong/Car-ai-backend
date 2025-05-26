@@ -1,5 +1,11 @@
-from backend_app import app
+from flask import Blueprint, jsonify
 
-if __name__ == "__main__":
-    app.run(debug=True)
+bp = Blueprint('main', __name__)
 
+@bp.route('/')
+def home():
+    return jsonify({"message": "Hello from Blueprint Home"})
+
+@bp.route('/health')
+def health():
+    return jsonify({"status": "healthy"})

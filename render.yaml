@@ -7,7 +7,6 @@ services:
     branch: master
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn backend_app:app
-    workingDir: car-ai-backend
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
