@@ -55,3 +55,10 @@ def test_number_produced():
 def translate_history():
     # Move the translate_history route logic here
     pass 
+
+@bp.route('/', methods=['GET'])
+def index():
+    return jsonify({
+        "message": "Car AI Backend API",
+        "status": "running"
+    })
