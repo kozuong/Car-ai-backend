@@ -25,10 +25,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def index():
-    return jsonify({
-        "message": "Car AI Backend API",
-        "status": "running"
-    })
+    return jsonify({"message": "Hello from Car AI Backend"})
 
 # Configure logging
 logging.basicConfig(

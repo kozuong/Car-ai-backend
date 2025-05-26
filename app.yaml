@@ -24,4 +24,4 @@ automatic_scaling:
   max_pending_latency: automatic
   max_concurrent_requests: 50
 
-entrypoint: gunicorn -b :$PORT app:create_app()
+entrypoint: gunicorn -b :$PORT backend_app:app
