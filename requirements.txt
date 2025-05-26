@@ -13,4 +13,5 @@ google-cloud-translate>=3.7.1
 google-generativeai>=0.3.2
 ultralytics==8.0.196
 redis>=6.1.0
+Flask-Limiter>=3.0.0
 
