@@ -6,7 +6,7 @@ services:
     plan: free
     branch: main
     buildCommand: pip install -r car-ai-backend/requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: gunicorn app:app --chdir car-ai-backend
     workingDir: car-ai-backend
     envVars:
       - key: PYTHON_VERSION
@@ -14,4 +14,4 @@ services:
       - key: FLASK_ENV
         value: production
       - key: GEMINI_API_KEY
-        sync: false  # Cấu hình API key ở dashboard chứ không ghi vào file
+        sync: false
