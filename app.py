@@ -323,6 +323,9 @@ def health_check():
 @app.route('/analyze_car', methods=['POST'])
 @limiter.limit("10 per minute")
 def analyze_car():
+    print("🔥 Nhận request /analyze_car")
+    image = request.files.get("image")
+    print(f"📸 Tên file: {image.filename if image else 'Không có file'}")
     try:
         logger.info("=== Starting analyze_car request ===")
         start_time = datetime.now()
@@ -341,7 +344,7 @@ def analyze_car():
             }), 500
 
         # Kiểm tra file ảnh
-        if 'image' not in request.files:
+        if not image:
             logger.error("No image file provided in request")
             return jsonify({
                 "status": "error",
@@ -349,14 +352,13 @@ def analyze_car():
                 "error": "Vui lòng chọn ảnh để phân tích"
             }), 400
         
-        image_file = request.files['image']
-        logger.info(f"Received image file: {image_file.filename}")
-        logger.info(f"Image file content type: {image_file.content_type}")
+        logger.info(f"Received image file: {image.filename}")
+        logger.info(f"Image file content type: {image.content_type}")
         
         # Đọc kích thước file
         try:
-            file_size = len(image_file.read())
-            image_file.seek(0)  # Reset file pointer
+            file_size = len(image.read())
+            image.seek(0)  # Reset file pointer
             logger.info(f"Image file size: {file_size} bytes")
         except Exception as e:
             logger.error(f"Error reading file size: {str(e)}")
@@ -367,7 +369,7 @@ def analyze_car():
             }), 400
         
         # Kiểm tra file trống
-        if not image_file or not image_file.filename:
+        if not image or not image.filename:
             logger.error("Empty image file received")
             return jsonify({
                 "status": "error",
@@ -377,11 +379,11 @@ def analyze_car():
             
         # Kiểm tra định dạng file
         allowed_extensions = {'png', 'jpg', 'jpeg', 'gif'}
-        file_ext = image_file.filename.rsplit('.', 1)[1].lower() if '.' in image_file.filename else ''
+        file_ext = image.filename.rsplit('.', 1)[1].lower() if '.' in image.filename else ''
         logger.info(f"File extension: {file_ext}")
         
         if file_ext not in allowed_extensions:
-            logger.error(f"Invalid file type: {image_file.filename}")
+            logger.error(f"Invalid file type: {image.filename}")
             return jsonify({
                 "status": "error",
                 "message": "Invalid file type",
@@ -401,8 +403,8 @@ def analyze_car():
         try:
             logger.info("Starting image processing...")
             # Resize ảnh trước khi encode (max 800px)
-            image_file.seek(0)
-            img = Image.open(image_file)
+            image.seek(0)
+            img = Image.open(image)
             img.thumbnail((800, 800))
             buf = io.BytesIO()
             img.save(buf, format=img.format or 'JPEG')
