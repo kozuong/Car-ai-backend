@@ -9,7 +9,7 @@ services:
     startCommand: gunicorn backend_app:app  # ← CHỈ nếu app.py có dòng `app = Flask(__name__)`
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.0
+        value: 3.10.0
       - key: FLASK_ENV
         value: production
       - key: GEMINI_API_KEY
