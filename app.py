@@ -801,6 +801,17 @@ def extract_from_text(text):
     fields['raw_text'] = text
     return fields
 
+@app.errorhandler(Exception)
+def handle_exception(e):
+    logger.error(f"Unhandled Exception: {str(e)}", exc_info=True)
+    import traceback
+    traceback.print_exc()
+    return jsonify({
+        "status": "error",
+        "message": "Internal server error",
+        "error": str(e)
+    }), 500
+
 if __name__ == '__main__':
     try:
         logger.info(f"Starting server on {Config.HOST}:{Config.PORT}")

@@ -30,32 +30,6 @@ google_search_service = GoogleCustomSearchService()
 def health_check():
     return jsonify({"status": "healthy"})
 
-@bp.route('/analyze_car', methods=['POST'])
-@with_error_handling
-def analyze_car():
-    if 'image' not in request.files:
-        return jsonify({"error": "No image provided"}), 400
-    
-    file = request.files['image']
-    if file.filename == '':
-        return jsonify({"error": "No image selected"}), 400
-    
-    # Get language preference from request
-    lang = request.form.get('lang', 'en')
-    
-    try:
-        # Read and process the image
-        image_data = file.read()
-        image = Image.open(io.BytesIO(image_data))
-        
-        # Analyze the car
-        result = car_analyzer.analyze_car(image, lang)
-        
-        return jsonify(result)
-    except Exception as e:
-        logger.error(f"Error analyzing car: {str(e)}")
-        return jsonify({"error": str(e)}), 500
-
 @bp.route('/test_api', methods=['GET'])
 def test_api():
     return jsonify({"status": "ok", "message": "API is working"})
