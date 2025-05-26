@@ -5,7 +5,7 @@ services:
     region: oregon
     plan: free
     branch: master
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
     startCommand: gunicorn backend_app:app  # ← CHỈ nếu app.py có dòng `app = Flask(__name__)`
     envVars:
       - key: PYTHON_VERSION
