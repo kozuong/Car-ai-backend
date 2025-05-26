@@ -1,3 +1,6 @@
+from flask import Flask
+app = Flask(__name__)
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import logging
@@ -20,9 +23,6 @@ import time
 import copy
 from concurrent.futures import ThreadPoolExecutor
 import os
-from flask import Flask, jsonify
-
-app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def index():
