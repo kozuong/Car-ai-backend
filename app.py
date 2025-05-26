@@ -20,7 +20,16 @@ import time
 import copy
 from concurrent.futures import ThreadPoolExecutor
 import os
+from flask import Flask, jsonify
 
+app = Flask(__name__)
+
+@app.route("/", methods=["GET"])
+def index():
+    return jsonify({
+        "message": "Car AI Backend API",
+        "status": "running"
+    })
 # Configure logging
 logging.basicConfig(
     level=getattr(logging, Config.LOG_LEVEL),
